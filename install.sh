@@ -1,25 +1,25 @@
-!/bin/bash
+#!/bin/bash
 
 # Moving to Downloads folder
 cd ~/Downloads
 mkdir App
 cd App
 
-su -
+#su -
 
 # Adding Secure Keys and updating APT lists
-wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+sudo wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+sudo wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
 # Virtualbox
-echo 'deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian focal contrib' | tee /etc/apt/sources.list.d/virtualbox.list
+echo 'deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian focal contrib' | sudo tee /etc/apt/sources.list.d/virtualbox.list
 # Spotify
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
+sudo curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
+sudo curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-exit
+#exit
 
 # Updating the whole system
 sudo apt update
