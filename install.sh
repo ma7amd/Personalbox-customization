@@ -36,7 +36,7 @@ sudo apt -y install vim wget curl git imp gnumeric gparted gparted-common qbitto
 sudo apt install -f
 
 # Installing VmWare
-sudo apt -y install gcc make linux-headers-$(uname -r) dkms
+sudo apt -y install gcc make perl linux-headers-$(uname -r) dkms
 wget http://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.5.6-16341506.x86_64.bundle
 chmod +x VMware-Workstation-Full-15.5.6-16341506.x86_64.bundle
 sudo ./VMware-Workstation-Full-15.5.6-16341506.x86_64.bundle
